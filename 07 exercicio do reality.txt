@@ -1,0 +1,46 @@
+// Exercício 7 - Lista 1
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+main ()
+{
+	setlocale(LC_ALL,"");
+	
+	int bolas_verde, bolas_amarelo, bolas_branco, tv, ta, tb, final, qtd, i, ganhador, final_ganhador;
+	bolas_verde = bolas_amarelo = bolas_branco = tv = ta = tb = final = qtd = i = final_ganhador = 0;
+	printf("\nDigite o número de participantes: ");
+	scanf("%d",&qtd);
+	
+	for(i=1;i<=qtd;i++){
+		printf("\n\nParticipate %d \n",i);
+		printf(" Quantas bolinhas você pegou verde?: ");
+		scanf("%d",&bolas_verde);
+		printf(" Quantas bolinhas você pegou amarelo?: ");
+		scanf("%d",&bolas_amarelo);
+		printf(" Quantas bolinhas você pegou branco?: ");
+		scanf("%d",&bolas_branco);
+		printf("\n");
+		tv = 10*bolas_verde;
+		ta = 5*bolas_amarelo;
+		tb = 3*bolas_branco;
+		printf(" Pontuação do participante %d correspondentes as bolinhas: \n",i);
+		printf(" \t Verde: %d pontos.",tv);
+		printf(" \t Amarelo: %d pontos.",ta);
+		printf(" \t Branco: %d pontos.",tb);
+		printf("\n");
+		final=tv+ta+tb;
+		printf(" Total do participante %d: %d pontos.",i,final);
+		if(final>final_ganhador){
+			final_ganhador=final;
+			ganhador = i;
+		}
+	}
+	
+	
+	printf("\n");
+	printf(" O ganhador foi o participante é %d, com um total de pontos de: %d \n",ganhador,final_ganhador);
+	
+	return 0;	
+} //fim programa
